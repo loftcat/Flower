@@ -9,6 +9,9 @@ router.get('/', function(req, res) {
 router.get('/flowerlist', function(req, res) {
     res.sendFile(path.join(__dirname, '../app', 'flowerlist.html'));
 });
+router.get('/flower_detail', function(req, res) {
+    res.sendFile(path.join(__dirname, '../app', 'flowerdetail.html'));
+});
 router.get('/login', function(req, res) {
     res.sendFile(path.join(__dirname, '../app', 'login.html'));
 });

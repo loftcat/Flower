@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/0.14.2/ui-bootstrap-tpls.js"></script>
+    <title></title>
+</head>
+<body>
+
+<div ng-app="flowerlist" ng-controller="PaginationDemoCtrl">
+
+    <uib-pagination direction-links="false" total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                    ng-change="pageChanged()" items-per-page="itemsPerPage"
+            ></uib-pagination>
+    <pre>The selected page no: {{currentPage}}</pre>
+
+
+
+</div>
+
+
+<script src="js/controller/test.js"></script>
+</body>
+</html>

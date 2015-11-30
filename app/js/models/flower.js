@@ -217,8 +217,25 @@ var FlowerDao = function () {
             }
         });
     };
-    this.findAll = function(callback) {
-        Flower.find(function(err,docs) {
+    this.findone = function(id, callback) {
+        Flower.findOne({_id:id},function(err,doc) {
+            if(callback){
+                callback(err,doc);
+            }
+        });
+    };
+
+    this.findByPage = function(type,index,count,callback) {
+        Flower.find({type:type},null,{limit:count,skip:index*count},function(err,docs) {
+            console.log(docs);
+            if(callback){
+                callback(err,docs);
+            }
+        });
+    };
+
+    this.findAll = function(type,callback) {
+        Flower.find({type:type},function(err,docs) {
             console.log(docs);
             if(callback){
                 callback(err,docs);
@@ -232,10 +249,10 @@ var FlowerDao = function () {
             }
         });
     };
-    this.count = function(callback) {
-        Flower.count(function(err,count){
+    this.count = function(type,callback) {
+        Flower.count({type:type},function(err,count){
             if(callback){
-                callback(count);
+                callback(err,count);
             }
         });
     };

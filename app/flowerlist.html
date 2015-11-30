@@ -2,28 +2,36 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
-
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+    <title></title>
 </head>
-<body>
-<div class="container-fluid" ng-app="app" ng-controller="list">
-    <div class="row-fluid">
-        <div class="span12">
-            <ol>
-                <li data-ng-repeat="x in flowers" >
-                    <a href=x.head_from>{{ x.name }}</a>
-                </li>
-            </ol>
+
+<body ng-app="flowerlist" >
+<div ng-controller="TabsDemoCtrl" class="container">
+    <uib-tabset>
+        <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled" select="getFlowers(tab.title)">
+        </uib-tab>
+    </uib-tabset>
+    <div>
+
+        <div class="row" >
+            <div class="col-xs-6 col-md-3" ng-repeat="flower in flowers">
+                <a href={{"http://localhost:3000/flower_detail#?id="+flower._id}} class="thumbnail">
+                    <img ng-src={{"http://7xoflr.com1.z0.glb.clouddn.com/"+flower.head_pic}} alt="..." style="height: 250px; width: 100%; display: block;">
+                </a>
+            </div>
         </div>
+
+        <uib-pagination direction-links="true" total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                        ng-change="pageChanged()" items-per-page="itemsPerPage"
+                ></uib-pagination>
+        <pre>The selected page no: {{currentPage}}</pre>
     </div>
 </div>
-<script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
-<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
-<!-- 可选: 包含 jQuery 库 -->
-<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
-<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="js/angular/app.js"></script>
+<script src="js/controller/flowerlist.js"></script>
 </body>
 </html>
