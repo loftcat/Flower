@@ -8,5 +8,18 @@ app.controller('detailController', function ($scope,$location,$http,$log) {
     $http.get("/api/flowerdetail/id="+$location.search().id)
         .success(function(response) {
             $scope.flower=response;
+            $scope.infos=getAllInfos(response.basic_info);
+            console.dir(getAllInfos(response.basic_info));
         });
 });
+
+var getAllInfos =function(obj ) {
+    var infos=[];
+    // 开始遍历
+    for ( var p in obj ){ // 方法
+        if ( typeof ( obj [ p ]) != " function " ){
+            infos.push(obj [ p ]);
+        }
+    }
+    return infos;
+}
