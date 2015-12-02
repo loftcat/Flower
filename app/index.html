@@ -2,10 +2,41 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+    <title>花花世界</title>
 </head>
-<body>
-<h1>花花世界</h1>
+<body ng-app="index">
 
+<dev ng-controller="indexController" class="container-fluid">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{dialogTitle}}</h3>
+        </div>
+        <div class="modal-body">
+            {{dialogInfo}}
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <dev class="search-inner" >
+        <form>
+            <h2 class="app-title">花花世界</h2>
+            <small class="app-slogan">寂静的山谷里野百合也有春天</small>
+                <input type="text" class="search-field" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
+                <button aria-label="提交" class="submit" ng-click="searching()">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+        </form>
+    </dev>
+</dev>
+
+<script src="js/controller/index.js"></script>
 </body>
 </html>

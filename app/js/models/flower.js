@@ -224,7 +224,13 @@ var FlowerDao = function () {
             }
         });
     };
-
+    this.findoneByName = function(name, callback) {
+        Flower.findOne({name:name},function(err,doc) {
+            if(callback){
+                callback(err,doc);
+            }
+        });
+    };
     this.findByPage = function(type,index,count,callback) {
         Flower.find({type:type},null,{limit:count,skip:index*count},function(err,docs) {
             console.log(docs);
