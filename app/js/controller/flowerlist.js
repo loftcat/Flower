@@ -5,7 +5,7 @@
 var app =angular.module('flowerlist', ['ui.bootstrap']);
 app.controller('TabsDemoCtrl', function ($scope,$http,$log) {
     $scope.storage_url="http://7xoflr.com1.z0.glb.clouddn.com/";
-    $scope.linktodetail="http://localhost:3000/flower_detail#?id=";
+    $scope.linktodetail="http://loftcat.cn:3000/flower_detail#?id=";
     $scope.tabs = [
         { title:'多肉植物', content:'Dynamic content 1' },
         { title:'观花植物', content:'Dynamic content 2' },

@@ -11,7 +11,7 @@ app.controller('indexController', function ($scope,$location,$http,$uibModal) {
         $http.get("/api/flowerdetail/name=" + $scope.info)
             .success(function (response) {
                 if(response!=null){
-                    window.location.href="http://localhost:3000/flower_detail#?id="+response._id;
+                    window.location.href="http://loftcat.cn:3000/flower_detail#?id="+response._id;
                 }else{
                     $scope.open($scope.lg);
                 }
