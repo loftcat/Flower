@@ -10,7 +10,7 @@ app.controller('indexController', function ($scope,$location,$http,$uibModal) {
         console.log($scope.info);
         $http.get("/api/flowerdetail/name=" + $scope.info)
             .success(function (response) {
-                console.log("asdasdasdasd");
+                console.log(response);
                 if(response!=null){
                     window.location.href="http://loftcat.cn:3000/flower_detail#?id="+response._id;
                 }else{
