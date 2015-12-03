@@ -41,7 +41,6 @@ app.controller('indexController', function ($scope,$location,$http,$uibModal) {
 
         modalInstance.result.then(function () {
         }, function () {
-            $log.info('Modal dismissed at: ' + new Date());
         });
     };
 
