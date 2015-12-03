@@ -17,7 +17,9 @@ app.controller('indexController', function ($scope,$location,$http,$uibModal) {
                 }
             });
     }
-
+    $scope.lineToList= function () {
+        window.location.href="http://loftcat.cn:3000/flowerlist";
+    }
     $scope.animationsEnabled = true;
 
     $scope.open = function (size) {
