@@ -42,7 +42,7 @@ router.get('/flowerdetail/name=:name', function(req, res) {
         if(err){
             res.json({name:"haha"});
         }else{
-            res.json({name:"lala"});
+            res.json(doc);
         }
     })
 });
