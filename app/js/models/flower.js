@@ -225,11 +225,8 @@ var FlowerDao = function () {
         });
     };
     this.findoneByName = function(name, callback) {
-        console.log("findoneByName---"+name);
         var qs=new RegExp(name);
-        console.log(qs);
         Flower.findOne({name:qs},function(err,doc) {
-            console.log(doc);
             if(callback){
                 callback(err,doc);
             }

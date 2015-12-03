@@ -39,11 +39,7 @@ router.get('/flowerdetail/id=:id', function(req, res) {
 router.get('/flowerdetail/name=:name', function(req, res) {
     var flowerDao = new FlowerDao();
     flowerDao.findoneByName(req.params.name,function (err, doc) {
-        if(err){
-            res.json({name:"haha"});
-        }else{
-            res.json(doc);
-        }
+        res.json(doc);
     })
 });
 
