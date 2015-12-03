@@ -43,7 +43,6 @@ router.get('/flowerdetail/name=:name', function(req, res) {
             res.json({name:"haha"});
         }else{
             res.json({name:"lala"});
-
         }
     })
 });
