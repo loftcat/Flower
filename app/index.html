@@ -12,7 +12,7 @@
 </head>
 <body ng-app="index">
 
-<dev ng-controller="indexController" class="container-fluid">
+<div ng-controller="indexController" class="container-fluid">
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
             <h3 class="modal-title">{{dialogTitle}}</h3>
@@ -25,20 +25,20 @@
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
-    <dev class="search-inner" >
+    <div class="search-inner" >
         <form>
             <h2 class="app-title">花花世界</h2>
             <small class="app-slogan">寂静的山谷里野百合也有春天</small>
                 <input type="text" class="search-field" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
-                <button aria-label="提交" class="submit" ng-click="searching()">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </button>
+                <button  class="submit btn-search" ng-click="searching()">搜索 </button>
         </form>
-    </dev>
-    <div class="lineto">
-       <button class="btn-linetolist"  ng-click="lineToList()">随便逛逛</button>
     </div>
-    </dev>
+    <div class="lineto">
+        <div class="lineto-box">
+            <button class="btn-linetolist"  ng-click="lineToList()">随便逛逛</button>
+        </div>
+    </div>
+    </div>
 <script src="js/controller/index.js"></script>
 </body>
 </html>

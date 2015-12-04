@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+    <title></title>
+</head>
+
+<body ng-app="flowerlist" >
+<div ng-controller="TabsDemoCtrl" class="container-fluid">
+    <div>
+
+        <div class="row" >
+            <div class="col-xs-6 col-md-3" ng-repeat="flower in flowers">
+                <a href={{linktodetail+flower._id}} target="_blank" class="thumbnail">
+                    <img ng-src={{storage_url+flower.head_pic}} alt="..." style="height: 300px; width: 100%; display: block;">
+                </a>
+            </div>
+        </div>
+        <pre>The selected page no: {{currentPage}}</pre>
+
+    </div>
+</div>
+<script src="js/controller/searchlist.js"></script>
+</body>
+</html>

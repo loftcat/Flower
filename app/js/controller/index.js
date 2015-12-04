@@ -7,19 +7,10 @@ var app =angular.module('index', ['ui.bootstrap']);
 app.controller('indexController', function ($scope,$location,$http,$uibModal) {
 
     $scope.searching= function () {
-        console.log($scope.info);
-        $http.get("/api/flowerdetail/name=" + $scope.info)
-            .success(function (response) {
-                console.log(response);
-                if(response!=null){
-                    window.location.href="http://loftcat.cn:3000/flower_detail#?id="+response._id;
-                }else{
-                    $scope.open($scope.lg);
-                }
-            });
+        window.location.href="http://localhost:3000/searchlist#?info="+$scope.info;
     }
     $scope.lineToList= function () {
-        window.location.href="http://loftcat.cn:3000/flowerlist";
+        window.location.href="http://localhost:3000/flowerlist";
     }
     $scope.animationsEnabled = true;
 

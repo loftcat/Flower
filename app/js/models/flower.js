@@ -224,11 +224,11 @@ var FlowerDao = function () {
             }
         });
     };
-    this.findoneByName = function(name, callback) {
+    this.findByName = function(name, callback) {
         var qs=new RegExp(name);
-        Flower.findOne({name:qs},function(err,doc) {
+        Flower.find({name:qs},function(err,docs) {
             if(callback){
-                callback(err,doc);
+                callback(err,docs);
             }
         });
     };

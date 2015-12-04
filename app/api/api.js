@@ -22,6 +22,13 @@ router.get('/flowerlist/type=:id/:index/:count', function(req, res) {
     })
 });
 
+router.get('/searchlist/name=:name', function(req, res) {
+    var flowerDao = new FlowerDao();
+    flowerDao.findByName(req.params.name,function (err, docs) {
+        res.json(docs);
+    })
+});
+
 router.get('/flowerlist/count/type=:type', function(req, res) {
     var flowerDao = new FlowerDao();
     flowerDao.count(req.params.type,function (err, count) {
@@ -36,11 +43,6 @@ router.get('/flowerdetail/id=:id', function(req, res) {
         res.json(count);
     })
 });
-router.get('/flowerdetail/name=:name', function(req, res) {
-    var flowerDao = new FlowerDao();
-    flowerDao.findoneByName(req.params.name,function (err, doc) {
-        res.json(doc);
-    })
-});
+
 
 module.exports = router;
