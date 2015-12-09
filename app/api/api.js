@@ -14,13 +14,22 @@ router.get('/test?type=:id', function(req, res) {
 //    res.send(id);
 });
 
-router.get('/flowerlist/type=:id/:index/:count', function(req, res) {
+router.get('/flowerlist/type=:type/:index/:count', function(req, res) {
     var flowerDao = new FlowerDao();
     console.log(req.params);
-    flowerDao.findByPage(req.params.id,req.params.index,req.params.count,function (err, docs) {
+    flowerDao.findByPage(req.params.type,req.params.index,req.params.count,function (err, docs) {
         res.json(docs);
     })
 });
+
+
+router.get('/searchlist/name=:name/:index/:count', function(req, res) {
+    var flowerDao = new FlowerDao();
+    flowerDao.findByNameWithPage(req.params.name,req.params.index,req.params.count,function (err, docs) {
+        res.json(docs);
+    })
+});
+
 
 router.get('/searchlist/name=:name', function(req, res) {
     var flowerDao = new FlowerDao();
@@ -28,11 +37,16 @@ router.get('/searchlist/name=:name', function(req, res) {
         res.json(docs);
     })
 });
+router.get('/searchlist/count/name=:name', function(req, res) {
+    var flowerDao = new FlowerDao();
+    flowerDao.countByName(req.params.name,function (err, count) {
+        res.json(count);
+    })
+});
 
 router.get('/flowerlist/count/type=:type', function(req, res) {
     var flowerDao = new FlowerDao();
     flowerDao.count(req.params.type,function (err, count) {
-        console.log(count);
         res.json(count);
     })
 });

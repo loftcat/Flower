@@ -43,6 +43,11 @@ small{
     margin-top: 20px;
     font-size: 16px;
 }
+.search-inner input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
 .submit{
     position: relative;
 }
@@ -50,11 +55,7 @@ small{
 .form-control:focus {
     z-index: 2;
 }
-.search-inner input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
+
 
 .lineto{
     max-width: 650px;

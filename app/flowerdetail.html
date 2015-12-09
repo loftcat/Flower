@@ -14,7 +14,22 @@
 
 <body ng-app="flowerdetail">
 <div ng-controller="detailController" class="container-fluid">
-    <div class="page-header">
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://localhost:3000">花花世界</a>
+        </div>
+        <div>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="search-field" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
+                </div>
+                <button  class="submit btn-search" ng-click="searching()">搜索 </button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="page-header" style="margin-top: 70px">
         <h1>{{flower.name}}
             <small>{{" "+flower.basic_info.scientific_name.value}}</small>
         </h1>

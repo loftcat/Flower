@@ -11,6 +11,9 @@ app.controller('detailController', function ($scope,$location,$http,$log) {
             $scope.infos=getAllInfos(response.basic_info);
             console.dir(getAllInfos(response.basic_info));
         });
+    $scope.searching= function () {
+        window.location.href="http://localhost:3000/searchlist#?info="+$scope.info;
+    }
 });
 
 var getAllInfos =function(obj ) {

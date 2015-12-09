@@ -232,6 +232,18 @@ var FlowerDao = function () {
             }
         });
     };
+
+    this.findByNameWithPage = function(name,index,count,callback) {
+        var qs=new RegExp(name);
+        Flower.find({name:qs},null,{limit:count,skip:index*count},function(err,docs) {
+            console.log(err);
+            console.log(docs);
+            if(callback){
+                callback(err,docs);
+            }
+        });
+    };
+
     this.findByPage = function(type,index,count,callback) {
         Flower.find({type:type},null,{limit:count,skip:index*count},function(err,docs) {
             console.log(docs);
@@ -258,6 +270,14 @@ var FlowerDao = function () {
     };
     this.count = function(type,callback) {
         Flower.count({type:type},function(err,count){
+            if(callback){
+                callback(err,count);
+            }
+        });
+    };
+    this.countByName = function(name,callback) {
+        var qs=new RegExp(name);
+        Flower.count({name:qs},function(err,count){
             if(callback){
                 callback(err,count);
             }
