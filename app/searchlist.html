@@ -29,21 +29,19 @@
         <div>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="search-field" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
+                    <input type="text" class="search-field form-control" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
                 </div>
-                <button  class="submit btn-search" ng-click="searching()">搜索 </button>
+                <button type="submit" class="btn btn-default" ng-click="searching()">搜索</button>
             </form>
         </div>
     </nav>
 
-    <div class="row" style="padding-top: 50px">
-        <div ng-repeat="flower in flowers" class="col-xs-12 col-md-8 col-md-offset-2" style="background-color: #eeeeee">
+    <div class="row" style="padding-top: 50px" ng-hide="isNone">
+        <div ng-repeat="flower in flowers" class="item-card col-xs-12 col-md-8 col-md-offset-2" ng-click="toDetail(flower)">
             <div class="row">
                 <div class="col-xs-12 col-md-4">
-                    <a href={{linktodetail+flower._id}} target="_blank" class="thumbnail">
-                        <img ng-src={{storage_url+flower.head_pic}} alt="..."
-                             style="height: 300px; width: 100%; display: block;">
-                    </a>
+                        <img ng-src={{storage_url+flower.head_pic+"-test"}} alt="..."
+                             style="height: 200px; width: 200px; display: block;">
                 </div>
                 <div class="col-xs-12 col-md-8">
                     <h1>{{flower.name}}
@@ -55,7 +53,7 @@
         </div>
     </div>
 
-<div class="row">
+<div class="row" ng-hide="isNone">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
         <uib-pagination
                 direction-links="true" total-items="totalItems" ng-model="currentPage" max-size="maxSize"
@@ -63,6 +61,10 @@
                 ></uib-pagination>
     </div>
 </div>
+    <div class="row" style="padding-top: 50px" ng-show="isNone">
+        <div class="item-card col-xs-12 col-md-8 col-md-offset-2" >不好意思啥也没搜到
+        </div>
+    </div>
 
 </div>
 <script src="js/controller/searchlist.js"></script>

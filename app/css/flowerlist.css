@@ -1,0 +1,48 @@
+body{
+    background-color: #eeeeee;
+
+}
+.item-card-container{
+    margin-top: 10px;
+}
+.item-card{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px #888888;
+}
+.item-card:hover
+{
+    background-color: #fffeda;
+}
+
+.navbar{
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px #888888;
+}
+h4.item-name{
+    width: 100px;
+    overflow:hidden;
+    float: left;
+    text-overflow:ellipsis;
+    vertical-align:top;
+    height: 30px;
+}
+small{
+    height: 30px;
+    width: 100px;
+    overflow:hidden;
+    float: left;
+    text-overflow:ellipsis;
+    vertical-align:top;
+}
+
+p{
+    width: 100px;
+    height: 100px;
+    float: left;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    vertical-align:top;
+}

@@ -1,0 +1,19 @@
+body{
+    background-color: #b0dac9;
+
+}
+.item-card{
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px #888888;
+}
+.item-card:hover
+{
+    background-color: #fffeda;
+}
+.navbar{
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px #888888;
+}

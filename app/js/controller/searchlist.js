@@ -8,11 +8,11 @@ app.controller('TabsDemoCtrl', function ($scope,$http,$location,$log) {
     $scope.linktodetail="http://localhost:3000/flower_detail#?id=";
     $scope.info =$location.search().info;
 
-
     $scope.getFlowers= function (name) {
         $http.get("/api/searchlist/count/name="+name)
             .success(function(response) {
                 if(response>0){
+                    $scope.isNone=false;
                     $scope.totalItems = response;
                     $scope.currentPage = 1;
                     $scope.itemsPerPage=20;
@@ -30,6 +30,8 @@ app.controller('TabsDemoCtrl', function ($scope,$http,$location,$log) {
                         });
                 }else{
 
+                    $scope.isNone=true;
+
                 }
             });
     }
@@ -45,6 +47,9 @@ app.controller('TabsDemoCtrl', function ($scope,$http,$location,$log) {
     }
     $scope.searching= function () {
         $scope.getFlowers($scope.info);
+    }
+    $scope.toDetail= function (flower) {
+        window.open($scope.linktodetail+flower._id);
     }
 });
 

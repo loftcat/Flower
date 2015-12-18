@@ -22,9 +22,9 @@
         <div>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="search-field" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
+                    <input type="text" class="search-field form-control" ng-model="info" placeholder="请输入您感兴趣的花花草草" required autofocus>
                 </div>
-                <button  class="submit btn-search" ng-click="searching()">搜索 </button>
+                <button type="submit" class="btn btn-default" ng-click="searching()">搜索</button>
             </form>
         </div>
     </nav>
@@ -36,12 +36,12 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-md-3">
-            <img ng-src={{"http://7xoflr.com1.z0.glb.clouddn.com/"+flower.head_pic}} style="width: 100%; height: 100%;"
+            <img ng-src={{"http://7xoflr.com1.z0.glb.clouddn.com/"+flower.head_pic+"-test"}} style="width: 100%; height: 100%;"
                  class="thumbnail"> </img>
         </div>
         <div class="col-xs-12 col-md-9">
             <div class="row">
-                 <div class="col-xs-6 col-md-6" ng-repeat="info in infos">
+                 <div class="col-xs-12 col-md-6 info-item" ng-repeat="info in infos">
                     <dl><dt class="basicInfo-item title">{{info.title}}<dd class="basicInfo-item value">{{info.value}}</dd></dt></dl>
                  </div>
             </div>
