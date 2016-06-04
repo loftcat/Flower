@@ -5,7 +5,7 @@
 var app =angular.module('searchlist', ['ui.bootstrap']);
 app.controller('TabsDemoCtrl', function ($scope,$http,$location,$log) {
     $scope.storage_url="http://7xoflr.com1.z0.glb.clouddn.com/";
-    $scope.linktodetail="http://localhost:3000/flower_detail#?id=";
+    $scope.linktodetail = "http://114.55.29.207:3000/flower_detail#?id=";
     $scope.info =$location.search().info;
 
     $scope.getFlowers= function (name) {

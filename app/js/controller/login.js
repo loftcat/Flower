@@ -3,14 +3,12 @@
  */
 
 var app =angular.module('login', ['ui.bootstrap']);
-app.controller('submitLogin', function ($scope) {
-
-
-    $scope.name="18806535352";
-    $scope.password="123456";
-
-    $scope.test= function () {
-        return "登录"
+app.controller('submitLogin', function ($scope, $http) {
+    $scope.login = function () {
+        $http.get("/api/login/name=" + $scope.name + "/" + $scope.password)
+            .success(function (response) {
+                if (response)
+                    window.location.href = "http://114.55.29.207:3000/flowerlist";
+            });
     }
-
 });

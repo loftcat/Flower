@@ -5,12 +5,21 @@
 var app =angular.module('index', ['ui.bootstrap']);
 
 app.controller('indexController', function ($scope,$location,$http,$uibModal) {
-
+    $scope.isLogin = false;
     $scope.searching= function () {
-        window.location.href="http://localhost:3000/searchlist#?info="+$scope.info;
+        window.location.href = "http://114.55.29.207:3000/searchlist#?info=" + $scope.info;
     }
+
+    $scope.login = function () {
+        window.location.href = "http://114.55.29.207:3000/login";
+    }
+
+    $scope.user = function () {
+
+    }
+
     $scope.lineToList= function () {
-        window.location.href="http://localhost:3000/flowerlist";
+        window.location.href = "http://114.55.29.207:3000/flowerlist";
     }
     $scope.animationsEnabled = true;
 

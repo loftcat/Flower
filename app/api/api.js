@@ -6,6 +6,7 @@ var router = express.Router();
 var path = require('path');
 
 var FlowerDao = require('../js/models/flower');
+var UserDao = require('../js/models/user')
 
 /* GET home page. */
 router.get('/test?type=:id', function(req, res) {
@@ -58,5 +59,18 @@ router.get('/flowerdetail/id=:id', function(req, res) {
     })
 });
 
+router.get('/login/name=:name/:password', function (req, res) {
+    var userDao = new UserDao();
+    userDao.findone(req.params.name, function (err, doc) {
+        res.json(doc);
+    })
+});
+router.get('/register/name=:name/:password', function (req, res) {
+    var userDao = new UserDao();
+    var user = {name: req.params.name, password: req.params.password};
+    userDao.add(user, function (err) {
+        res.json(err);
+    })
+});
 
 module.exports = router;

@@ -1,9 +1,8 @@
 body{
-    padding-top: 100px;
     padding-bottom: 40px;
     background:url(../img/bg.jpeg);
-    -moz-background-size:1366px 768px; /* 老版本的 Firefox */
-    background-size:1366px 768px;
+    -moz-background-size: 1566px 768px; /* 老版本的 Firefox */
+    background-size: 1566px 768px;
     background-repeat:no-repeat;
 }
 
@@ -11,13 +10,16 @@ body{
 }
 .container-fluid>.search-inner{
     max-width: 650px;
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
     margin: 0 auto;
     display: block;
     width: 100%;
     vertical-align: middle;
     text-align: center;
     white-space: normal;
+    padding-top: 115px;
 }
 
 h2{
@@ -89,6 +91,35 @@ small{
     box-sizing: border-box;
     width: 22%;
     height: 45px;
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.0);
+    color: #ffffff;
+}
+
+div.user {
+    position: relative;
+    margin-top: 30px;
+    float: right;
+    display: block;
+}
+
+.btn-login {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75px;
+    height: 35px;
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.0);
+    color: #ffffff;
+}
+
+.btn-user {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50px;
+    height: 35px;
     border:2px solid #ffffff;
     background:rgba(255,255,255,0.0);
     color: #ffffff;

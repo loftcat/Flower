@@ -25,6 +25,12 @@
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
+
+    <div class="user">
+        <button class="btn-user" ng-click="user()" ng-show="isLogin">我</button>
+        <button class="btn-login" ng-click="login()" ng-hide="isLogin">登录</button>
+    </div>
+
     <div class="search-inner" >
         <form>
             <h2 class="app-title">花花世界</h2>
